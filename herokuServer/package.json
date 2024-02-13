@@ -1,0 +1,20 @@
+{
+  "name": "my-courses-anby2001",
+  "version": "1.0.0",
+  "description": "project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "anton byström anby2001@student.miun.se",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.13"
+  },
+  "engines": {
+    "node": "17.0.1"
+  }
+}

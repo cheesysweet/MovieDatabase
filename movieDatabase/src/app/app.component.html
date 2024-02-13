@@ -1,0 +1,31 @@
+  <header *ngIf="hasRoute('/')">
+    <h1 class="center">{{ heading }}</h1>
+  
+    <nav>
+      <a routerLink="/my-movies">my movies</a>
+      <a routerLink="/administration">administration</a>
+    </nav>
+  </header>
+  
+  <header *ngIf="hasRoute('/my-movies')">
+    <h1 class="center">{{ heading2 }}</h1>
+  
+    <nav>
+      <a routerLink="/">movies</a>
+      <a routerLink="/administration">administration</a>
+    </nav>
+  </header>
+
+  <header *ngIf="hasRoute('/administration')">
+    <h1 class="center">{{ heading3 }}</h1>
+  
+    <nav>
+      <a routerLink="/">movies</a>
+      <p>     </p>
+      <a routerLink="/my-movies">my movies</a>
+    </nav>
+  </header>
+  
+  <main>
+    <router-outlet></router-outlet>
+  </main>

@@ -1,0 +1,75 @@
+<app-search (findMovie)="getMovies($event)"></app-search>
+<div>
+    <thead>
+        <tr class="title">
+            <td>Movies</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let movie of movies"> <!-- displayes all searched movies -->
+            <td><img src="{{ movie.Poster }}" alt="{{ movie.Title }}"></td>
+            <td class="content">{{ movie.Title }}</td>
+            <td><button type="button" (click)="addMovie(movie)">add movie</button></td>
+        </tr>
+    </tbody>
+
+    <thead>
+        <tr class="title">
+            <td>Marvel movies</td>
+            <td>Information</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let movie of marvelMovies"> <!-- displayes all marvel movies -->
+            <td><img src="{{ movie.Poster }}" alt="{{ movie.Title }}"></td>
+            <td class="content">
+                <tr>Title: {{ movie.Title }}</tr>
+                <tr>Runtime: {{ movie.Runtime }}</tr>
+                <tr>Genre: {{ movie.Genre }}</tr>
+                <tr>Released: {{ movie.Released }}</tr>
+                <tr>Plot: {{ movie.Plot }}</tr>
+                <tr>Rated: {{ movie.Rated }}</tr>
+                <tr>Language: {{ movie.Language }}</tr>
+                <tr>ImdbRating: {{ movie.imdbRating }}</tr>
+                <tr>Boxoffice earnings: {{ movie.BoxOffice }}</tr>
+                <tr>Actors: {{ movie.Actors }}</tr>
+                <tr>Director: {{ movie.Director }}</tr>
+                <tr>Writer: {{ movie.Writer }}</tr>
+                <tr>Country: {{ movie.Country }}</tr>
+                <tr>Awards: {{ movie.Awards }}</tr>
+            </td>
+            <td><button type="button" (click)="addMovie(movie)">add movie</button></td>
+        </tr>
+    </tbody>
+
+    <thead>
+        <tr class="title">
+            <td>DC movies</td>
+            <td>Information</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let movie of DCMovies"> <!-- displayes all dc movies-->
+            <td><img src="{{ movie.Poster }}" alt="{{ movie.Title }}"></td>
+            <td class="content">
+                <tr>Title: {{ movie.Title }}</tr>
+                <tr>Runtime: {{ movie.Runtime }}</tr>
+                <tr>Genre: {{ movie.Genre }}</tr>
+                <tr>Released: {{ movie.Released }}</tr>
+                <tr>Plot: {{ movie.Plot }}</tr>
+                <tr>Rated: {{ movie.Rated }}</tr>
+                <tr>Language: {{ movie.Language }}</tr>
+                <tr>ImdbRating: {{ movie.imdbRating }}</tr>
+                <tr>Boxoffice earnings: {{ movie.BoxOffice }}</tr>
+                <tr>Actors: {{ movie.Actors }}</tr>
+                <tr>Director: {{ movie.Director }}</tr>
+                <tr>Writer: {{ movie.Writer }}</tr>
+                <tr>Country: {{ movie.Country }}</tr>
+                <tr>Awards: {{ movie.Awards }}</tr>
+            </td>
+            <td><button type="button" (click)="addMovie(movie)">add movie</button></td>
+        </tr>
+    </tbody>
+</div>

@@ -1,0 +1,40 @@
+<app-search (findMovie)="getMovies($event)"></app-search>
+<div>
+    <div class="addMovie"> <!-- Used to add a movie with a movie serie -->
+        <p> Add a new movie to database by first seaching for a title and then use the </p>
+        <label>{{ TitleName }}<input type="text" name="Title" [(ngModel)]="Title"
+            placeholder="Type imdbID..." />
+        </label>
+        <label>{{ SerieName }}<input type="text" name="Serie" [(ngModel)]="Serie"
+                placeholder="Movie serie..." />
+        </label>
+        <button (click)="addMovie()"> add movie</button>  
+    </div>
+    <thead>
+        <tr class="title">
+            <td>Available movies</td>
+            <td></td>
+            <td>ImdbID</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let movie of movies"> <!-- displayes all searched movies -->
+            <td><img src="{{ movie.Poster }}" alt="{{ movie.Title }}"></td>
+            <td class="content">{{ movie.Title }}</td>
+            <td><a (click)="click(movie.imdbID)">{{ movie.imdbID }}</a></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr class="title">
+            <td>Movie database</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let movie of movieDatabase"> <!-- displayes all movies stored in database -->
+            <td><img src="{{ movie.Poster }}" alt="{{ movie.Title }}"></td>
+            <td class="content">{{ movie.Title }}</td>
+            <td><button type="button" (click)="deleteMovie(movie.Title)">delete movie</button></td>
+        </tr>
+    </tbody>
+
+</div>

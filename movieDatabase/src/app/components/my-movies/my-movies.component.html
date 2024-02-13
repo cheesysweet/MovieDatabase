@@ -1,0 +1,31 @@
+<thead>
+    <tr>
+        <td>myMovies</td>
+        <td>Information</td>
+        <td>Watched</td>
+        <td></td>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let movie of myMovies"> <!-- Displayes a poster and information about each movie saved -->
+        <td><img src="{{ movie.Information.Poster }}" alt="{{ movie.Title }}"></td>
+        <td class="content">
+            <tr>Title: {{ movie.Information.Title }}</tr>
+            <tr>Runtime: {{ movie.Information.Runtime }}</tr>
+            <tr>Genre: {{ movie.Information.Genre }}</tr>
+            <tr>Released: {{ movie.Information.Released }}</tr>
+            <tr>Plot: {{ movie.Information.Plot }}</tr>
+            <tr>Rated: {{ movie.Information.Rated }}</tr>
+            <tr>Language: {{ movie.Information.Language }}</tr>
+            <tr>ImdbRating: {{ movie.Information.imdbRating }}</tr>
+            <tr>Boxoffice earnings: {{ movie.Information.BoxOffice }}</tr>
+            <tr>Actors: {{ movie.Information.Actors }}</tr>
+            <tr>Director: {{ movie.Information.Director }}</tr>
+            <tr>Writer: {{ movie.Information.Writer }}</tr>
+            <tr>Country: {{ movie.Information.Country }}</tr>
+            <tr>Awards: {{ movie.Information.Awards }}</tr>
+        </td>
+        <td><input type="checkbox" id="checkbox-{{movie.Title}}" [(ngModel)]="movie.Status" (ngModelChange)="changeStatus(movie)"/></td>
+        <td><button type="button" (click)="deleteMovie(movie.Title)">delete</button></td>
+    </tr>
+</tbody>
